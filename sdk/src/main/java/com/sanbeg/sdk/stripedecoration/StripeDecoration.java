@@ -15,14 +15,21 @@ public class StripeDecoration extends RecyclerView.ItemDecoration {
     public static final int HORIZONTAL = LinearLayout.HORIZONTAL;
     public static final int VERTICAL = LinearLayout.VERTICAL;
 
-    private final Drawable stripe;
-
+    private Drawable [] stripes = {null, null};
     private int orientation = VERTICAL;
 
     public StripeDecoration(Drawable stripe) {
-        this.stripe = stripe;
+        this.stripes[1] = stripe;
     }
 
+    /**
+     * Set an array of drawables, which will be repeatedly cycled through to
+     * draw each stripe.  If any drawable is null, nothing will be drawn for that stripe.
+     * @param drawables the list of drawables for alternate stripes
+     */
+    public void setDrawables(Drawable ... drawables) {
+        stripes = drawables;
+    }
 
     /**
      * Sets the orientation for this divider. This should be called if
@@ -42,8 +49,13 @@ public class StripeDecoration extends RecyclerView.ItemDecoration {
     public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
         int count = parent.getChildCount();
         if (count > 0) {
-            int offset = parent.getChildAdapterPosition(parent.getChildAt(0));
-            for (int i = 1 - offset % 2; i < count; i += 2) {
+            int offset = parent.getChildAdapterPosition(parent.getChildAt(0)) % stripes.length;
+            for (int i = 0; i < count; i ++) {
+                Drawable stripe = stripes[(i + offset) % stripes.length];
+                if (stripe == null) {
+                    continue;
+                }
+
                 View child = parent.getChildAt(i);
 
                 final int left;

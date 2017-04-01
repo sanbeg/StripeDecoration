@@ -1,5 +1,6 @@
 package com.sanbeg.sdkdemo.stripedecoration;
 
+import android.graphics.Color;
 import android.graphics.drawable.PaintDrawable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -57,6 +58,24 @@ public class MainActivity extends AppCompatActivity {
         StripeDecoration decoration = new StripeDecoration(
                 new PaintDrawable(ContextCompat.getColor(this, R.color.neutralStripe))
         );
+
+        int [] rbc = {
+                Color.RED,
+                0xFFFF7F00,
+                Color.YELLOW,
+                Color.GREEN,
+                Color.BLUE,
+                0xFF4B0082,
+                0xFF8F00FF,
+                Color.TRANSPARENT
+        };
+
+        PaintDrawable [] rbp = new PaintDrawable[rbc.length];
+        for (int i=0; i<rbc.length; ++i) {
+            rbp[i] = new PaintDrawable(rbc[i]);
+        }
+        decoration.setDrawables(rbp);
+
         decoration.setOrientation(((LinearLayoutManager)recyclerView.getLayoutManager()).getOrientation());
         recyclerView.addItemDecoration(decoration);
     }
