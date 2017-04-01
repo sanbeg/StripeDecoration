@@ -4,6 +4,7 @@ import android.graphics.drawable.PaintDrawable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     static class MyViewHolder extends RecyclerView.ViewHolder {
         final TextView textView;
-        
+
         MyViewHolder(View itemView) {
             super(itemView);
             textView = (TextView) itemView.findViewById(R.id.text);
@@ -53,10 +54,10 @@ public class MainActivity extends AppCompatActivity {
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.list);
         recyclerView.setAdapter(new MyAdapter());
-        recyclerView.addItemDecoration(
-                new StripeDecoration(
-                        new PaintDrawable(ContextCompat.getColor(this, R.color.neutralStripe))
-                )
+        StripeDecoration decoration = new StripeDecoration(
+                new PaintDrawable(ContextCompat.getColor(this, R.color.neutralStripe))
         );
+        decoration.setOrientation(((LinearLayoutManager)recyclerView.getLayoutManager()).getOrientation());
+        recyclerView.addItemDecoration(decoration);
     }
 }

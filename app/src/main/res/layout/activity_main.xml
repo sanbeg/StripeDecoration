@@ -11,6 +11,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:clipToPadding="false"
     app:layoutManager="LinearLayoutManager"
+    android:orientation="vertical"
 
     tools:context="com.sanbeg.sdkdemo.stripedecoration.MainActivity">
 
