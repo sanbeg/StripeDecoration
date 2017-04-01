@@ -1,10 +1,12 @@
 package com.sanbeg.sdkdemo.stripedecoration;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.PaintDrawable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -17,6 +19,8 @@ import com.sanbeg.java.numbertext.NumberTextEn;
 import com.sanbeg.sdk.stripedecoration.StripeDecoration;
 
 public class MainActivity extends AppCompatActivity {
+    public static final String KEY_ORIENTATION = "orientation";
+    public static final String KEY_COLOR = "color";
 
     static class MyViewHolder extends RecyclerView.ViewHolder {
         final TextView textView;
@@ -59,24 +63,41 @@ public class MainActivity extends AppCompatActivity {
                 new PaintDrawable(ContextCompat.getColor(this, R.color.neutralStripe))
         );
 
-        int [] rbc = {
-                Color.RED,
-                0xFFFF7F00,
-                Color.YELLOW,
-                Color.GREEN,
-                Color.BLUE,
-                0xFF4B0082,
-                0xFF8F00FF,
-                Color.TRANSPARENT
-        };
+        Intent intent = getIntent();
 
-        PaintDrawable [] rbp = new PaintDrawable[rbc.length];
-        for (int i=0; i<rbc.length; ++i) {
-            rbp[i] = new PaintDrawable(rbc[i]);
+        if (intent.getBooleanExtra(KEY_COLOR, false)) {
+            int[] rbc = {
+                    Color.RED,
+                    0xFFFF7F00,
+                    Color.YELLOW,
+                    Color.GREEN,
+                    Color.BLUE,
+                    0xFF4B0082,
+                    0xFF8F00FF,
+                    Color.TRANSPARENT
+            };
+
+            PaintDrawable[] rbp = new PaintDrawable[rbc.length];
+            for (int i = 0; i < rbc.length; ++i) {
+                rbp[i] = new PaintDrawable(rbc[i]);
+            }
+            decoration.setDrawables(rbp);
         }
-        decoration.setDrawables(rbp);
 
-        decoration.setOrientation(((LinearLayoutManager)recyclerView.getLayoutManager()).getOrientation());
+        LinearLayoutManager layoutManager = (LinearLayoutManager)recyclerView.getLayoutManager();
+        switch(intent.getIntExtra(KEY_ORIENTATION, StripeDecoration.VERTICAL)) {
+            case StripeDecoration.VERTICAL:
+                decoration.setOrientation(layoutManager.getOrientation());
+                break;
+            case StripeDecoration.HORIZONTAL:
+                layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+                decoration.setOrientation(layoutManager.getOrientation());
+                break;
+            case StripeDecoration.GRID:
+                recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
+                decoration.setOrientation(StripeDecoration.GRID);
+        }
+
         recyclerView.addItemDecoration(decoration);
     }
 }
