@@ -11,8 +11,11 @@ import android.widget.LinearLayout;
  */
 
 public class StripeDecoration extends RecyclerView.ItemDecoration {
+    /** Value for a grid RecyclerView - fit stripe to the item in both directions.           **/
     public static final int GRID = -1;
+    /** Value for a horizontal RecyclerView - expand stripes to the full height of the View. **/
     public static final int HORIZONTAL = LinearLayout.HORIZONTAL;
+    /** Value for a vertical RecyclerView - expand stripes to the full width of the View.    **/
     public static final int VERTICAL = LinearLayout.VERTICAL;
 
     private Drawable [] stripes;
@@ -35,7 +38,7 @@ public class StripeDecoration extends RecyclerView.ItemDecoration {
      * Sets the orientation for this divider. This should be called if
      * {@link RecyclerView.LayoutManager} changes orientation.
      *
-     * @param orientation {@link #HORIZONTAL} or {@link #VERTICAL}
+     * @param orientation {@link #HORIZONTAL}, {@link #VERTICAL} or {@link #GRID}
      */
     public void setOrientation(int orientation) {
         if (orientation != HORIZONTAL && orientation != VERTICAL && orientation != GRID) {

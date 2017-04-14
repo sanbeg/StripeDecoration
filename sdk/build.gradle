@@ -32,3 +32,11 @@ dependencies {
     testCompile 'junit:junit:4.12'
     testCompile 'org.mockito:mockito-all:1.9.5'
 }
+
+ext {
+    PUBLISH_GROUP_ID = 'com.sanbeg.sdk'
+    PUBLISH_ARTIFACT_ID = 'stripe-decoration'
+    PUBLISH_VERSION = '0.1'
+}
+
+apply from: 'https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle'
