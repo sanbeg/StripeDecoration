@@ -31,14 +31,16 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    static class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
+    int itemLayout = R.layout.item_text;
+
+    class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
         private final NumberText numberText = new NumberTextEn();
 
         @Override
         public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             return new MyViewHolder(
                     LayoutInflater.from(parent.getContext())
-                            .inflate(R.layout.item_text, parent, false)
+                            .inflate(itemLayout, parent, false)
             );
         }
 
@@ -96,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
             case StripeDecoration.GRID:
                 recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
                 decoration.setOrientation(StripeDecoration.GRID);
+                itemLayout = R.layout.grid_cell;
         }
 
         recyclerView.addItemDecoration(decoration);

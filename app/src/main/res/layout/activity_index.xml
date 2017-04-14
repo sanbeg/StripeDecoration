@@ -14,7 +14,11 @@
     <RadioGroup
         android:id="@+id/or"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:padding="4dp"
+        >
         <RadioButton
             android:id="@+id/ov"
             android:layout_width="match_parent"
@@ -36,15 +40,14 @@
             />
     </RadioGroup>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="4dp"
-        android:background="@color/colorAccent" />
-
     <RadioGroup
         android:id="@+id/color"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:padding="4dp"
+        >
 
         <RadioButton
             android:id="@+id/cs"
@@ -63,11 +66,6 @@
 
     </RadioGroup>
 
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="4dp"
-        android:background="@color/colorAccent" />
 
     <Button
         android:layout_width="match_parent"
