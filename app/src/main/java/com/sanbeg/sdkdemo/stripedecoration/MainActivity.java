@@ -69,13 +69,13 @@ public class MainActivity extends AppCompatActivity {
 
         if (intent.getBooleanExtra(KEY_COLOR, false)) {
             int[] rbc = {
-                    Color.RED,
-                    0xFFFF7F00,
-                    Color.YELLOW,
-                    Color.GREEN,
-                    Color.BLUE,
-                    0xFF4B0082,
-                    0xFF8F00FF,
+                    0xAAFF0000,
+                    0xAAFF7F00,
+                    0xAAFFFF00,
+                    0xAA00FF00,
+                    0xAA0000FF,
+                    0xAA4B0082,
+                    0xAA8F00FF,
                     Color.TRANSPARENT
             };
 

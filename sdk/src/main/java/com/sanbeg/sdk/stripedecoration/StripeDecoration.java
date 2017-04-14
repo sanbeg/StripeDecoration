@@ -15,11 +15,11 @@ public class StripeDecoration extends RecyclerView.ItemDecoration {
     public static final int HORIZONTAL = LinearLayout.HORIZONTAL;
     public static final int VERTICAL = LinearLayout.VERTICAL;
 
-    private Drawable [] stripes = {null, null};
+    private Drawable [] stripes;
     private int orientation = VERTICAL;
 
     public StripeDecoration(Drawable stripe) {
-        this.stripes[1] = stripe;
+        stripes = new Drawable[] {null, stripe};
     }
 
     /**
