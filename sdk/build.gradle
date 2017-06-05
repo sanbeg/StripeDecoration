@@ -51,7 +51,7 @@ install {
                 groupId 'com.sanbeg.sdk'
                 artifactId artifactName
                 version artifactVersion
-                
+
                 licenses {
                     license {
                         name 'The Apache Software License, Version 2.0'
@@ -73,6 +73,7 @@ task sourcesJar(type: Jar) {
 task javadoc(type: Javadoc) {
     source = android.sourceSets.main.java.srcDirs
     classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    classpath += project.files("build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.2.0/jars/classes.jar")
 }
 
 task javadocJar(type: Jar, dependsOn: javadoc) {
