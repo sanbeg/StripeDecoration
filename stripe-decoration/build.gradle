@@ -10,11 +10,6 @@ android {
     defaultConfig {
         minSdkVersion 9
         targetSdkVersion 25
-        //versionCode 0
-        //versionName artifactVersion
-
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
     }
     buildTypes {
         release {
@@ -27,9 +22,6 @@ android {
 dependencies {
     final supportVersion = '25.2.0'
 
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
     //provided "com.android.support:recyclerview-v7:$supportVersion"
     compile "com.android.support:recyclerview-v7:$supportVersion"
 
