@@ -38,5 +38,5 @@ dependencies {
     compile 'com.sanbeg.java:number-text:1.0'
 
     testCompile 'junit:junit:4.12'
-    compile project(':sdk')
+    compile project(':stripe-decoration')
 }

@@ -1,6 +1,7 @@
 *~
 .gradle
 /local.properties
+/bintray.properties
 /.idea/workspace.xml
 /.idea/libraries
 /.idea
