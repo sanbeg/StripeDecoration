@@ -75,7 +75,12 @@ artifacts {
     archives sourcesJar
 }
 Properties properties = new Properties()
-properties.load(project.rootProject.file('bintray.properties').newDataInputStream())
+try {
+    properties.load(project.rootProject.file('bintray.properties').newDataInputStream())
+}
+catch (IOException e) {
+    e.println()
+}
 
 bintray {
     user = properties.getProperty("user")
