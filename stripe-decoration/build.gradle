@@ -1,6 +1,6 @@
 apply plugin: 'com.android.library'
 
-version = "0.2"
+version = "1.0"
 group = 'com.sanbeg.sdk'
 
 android {
@@ -84,7 +84,7 @@ bintray {
     configurations = ['archives']
 
     pkg {
-        repo = "test"
+        repo = "maven"
         name = project.name
         version {
             name = project.version
