@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/sanbeg/StripeDecoration.svg?branch=master)](https://travis-ci.org/sanbeg/StripeDecoration)
+[![Download](https://api.bintray.com/packages/steve-sanbeg/maven/stripe-decoration/images/download.svg) ](https://bintray.com/steve-sanbeg/maven/stripe-decoration/_latestVersion)
 
 Android library to decorate a RecyclerView with alternating stripes. You
 would typically provide a single stripe, to alternate between striped and
