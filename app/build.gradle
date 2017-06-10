@@ -26,11 +26,11 @@ dependencies {
     })
 
     final supportVersion = '25.2.0'
-    compile 'com.android.support:appcompat-v7:25.2.0'
+    compile "com.android.support:appcompat-v7:$supportVersion"
     compile "com.android.support:recyclerview-v7:$supportVersion"
 
     compile 'com.sanbeg.java:number-text:1.0'
+    compile project(':stripe-decoration')
 
     testCompile 'junit:junit:4.12'
-    compile project(':stripe-decoration')
 }
