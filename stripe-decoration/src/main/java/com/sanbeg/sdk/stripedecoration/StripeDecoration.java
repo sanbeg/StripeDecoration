@@ -53,6 +53,9 @@ public class StripeDecoration extends RecyclerView.ItemDecoration {
         int count = parent.getChildCount();
         if (count > 0) {
             int offset = parent.getChildAdapterPosition(parent.getChildAt(0)) % stripes.length;
+            if (offset < 0) {
+                offset = 0;
+            }
             for (int i = 0; i < count; i ++) {
                 Drawable stripe = stripes[(i + offset) % stripes.length];
                 if (stripe == null) {
