@@ -26,6 +26,10 @@ public class StripeDecorationTest {
 
     @Mock
     Drawable stripe;
+
+    @Mock
+    Drawable stripe2;
+
     @Mock
     Canvas c;
 
@@ -85,6 +89,33 @@ public class StripeDecorationTest {
         verify(stripe).setBounds(0, CHILD_HEIGHT, PARENT_WIDTH, 2 * CHILD_HEIGHT);
         verify(stripe).draw(c);
     }
+
+
+    @Test
+    public void testOnDrawTwo() throws Exception {
+        when(rv.getChildAdapterPosition(child0)).thenReturn(0);
+
+        StripeDecoration decoration = new StripeDecoration(stripe);
+        decoration.setDrawables(stripe, stripe2);
+        decoration.onDraw(c, rv, null);
+        verify(stripe).setBounds(0, 0, PARENT_WIDTH, CHILD_HEIGHT);
+        verify(stripe2).setBounds(0, CHILD_HEIGHT, PARENT_WIDTH, 2 * CHILD_HEIGHT);
+        verify(stripe).setBounds(0, 2 * CHILD_HEIGHT, PARENT_WIDTH, 3 * CHILD_HEIGHT);
+        verify(stripe, times(2)).draw(c);
+        verify(stripe2).draw(c);
+    }
+
+
+    @Test
+    public void testOnDrawNoPosition() throws Exception {
+        when(rv.getChildAdapterPosition(child0)).thenReturn(RecyclerView.NO_POSITION);
+
+        StripeDecoration decoration = new StripeDecoration(stripe);
+        decoration.onDraw(c, rv, null);
+        verify(stripe).setBounds(0, CHILD_HEIGHT, PARENT_WIDTH, 2 * CHILD_HEIGHT);
+        verify(stripe).draw(c);
+    }
+
 
     @Test
     public void testOnDrawNext() throws Exception {
