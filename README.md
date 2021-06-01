@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/sanbeg/StripeDecoration.svg?branch=master)](https://travis-ci.org/sanbeg/StripeDecoration)
-[![codecov](https://codecov.io/gh/sanbeg/StripeDecoration/branch/master/graph/badge.svg)](https://codecov.io/gh/sanbeg/StripeDecoration)
-[![Download](https://api.bintray.com/packages/steve-sanbeg/maven/stripe-decoration/images/download.svg) ](https://bintray.com/steve-sanbeg/maven/stripe-decoration/_latestVersion)
+[![](https://jitci.com/gh/sanbeg/StripeDecoration/svg)](https://jitci.com/gh/sanbeg/StripeDecoration)
 
 StripeDecoration
 ================
