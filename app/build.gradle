@@ -26,6 +26,7 @@ dependencies {
     implementation project(':stripe-decoration')
 
     //implementation 'com.github.sanbeg.StripeDecoration:stripe-decoration:master-SNAPSHOT'
+    //implementation 'com.github.sanbeg.StripeDecoration:stripe-decoration:1.1.0'
 
     testImplementation 'junit:junit:4.13.2'
 }
