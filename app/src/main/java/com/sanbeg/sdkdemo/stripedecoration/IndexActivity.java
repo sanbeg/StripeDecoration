@@ -1,10 +1,11 @@
 package com.sanbeg.sdkdemo.stripedecoration;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioGroup;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.sanbeg.sdk.stripedecoration.StripeDecoration;
 

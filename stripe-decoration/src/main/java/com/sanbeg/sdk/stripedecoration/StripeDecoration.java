@@ -2,9 +2,10 @@ package com.sanbeg.sdk.stripedecoration;
 
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.LinearLayout;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by steve on 3/30/17.
