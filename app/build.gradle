@@ -7,7 +7,7 @@ android {
         minSdkVersion 19
         targetSdkVersion 29
         versionCode 1
-        versionName "1.0"
+        versionName "1.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -24,6 +24,8 @@ dependencies {
 
     implementation 'com.sanbeg.java:number-text:1.0'
     implementation project(':stripe-decoration')
+
+    //implementation 'com.github.sanbeg.StripeDecoration:stripe-decoration:master-SNAPSHOT'
 
     testImplementation 'junit:junit:4.13.2'
 }

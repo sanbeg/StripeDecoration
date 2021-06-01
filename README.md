@@ -16,7 +16,7 @@ iterate through.  It works with vertical, horizontal, and even grids.
 
 ```groovy
     dependencies {
-        compile 'com.sanbeg.sdk:stripe-decoration:1.0'
+        implementation 'com.github.sanbeg.StripeDecoration:stripe-decoration:1.1.0'
     }
 ```
 
